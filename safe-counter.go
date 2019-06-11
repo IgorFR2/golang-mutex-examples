@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"sync"
-	"time"
 )
 
 type Counter struct {
@@ -13,7 +12,6 @@ type Counter struct {
 }
 
 func (c *Counter) inc() {
-	time.Sleep(1 * time.Second)
 	c.mux.Lock()
 	c.value = c.value + 1
 	c.mux.Unlock()
